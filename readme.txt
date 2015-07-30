@@ -53,3 +53,13 @@ After app modification run
         grunt build
 Then deploy with
         grunt buildcontrol:openshift
+
+#use of c9sdk (install guide from github: ) you can launch with:
+
+cd /var/c9sdk
+
+node server.js -w /var/epgame/ -p 8181 -l 0.0.0.0 -a :
+
+#copy to github
+
+rsync -avHpP --exclude-from=/var/src/epgame/rsync-exclude.txt /var/epgame/ /var/src/epgame

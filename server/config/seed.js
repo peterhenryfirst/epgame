@@ -7,6 +7,7 @@
 
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
+var Npc = require('../api/npc/npc.model');
 
 Thing.find({}).remove(function() {
   Thing.create({
@@ -44,6 +45,23 @@ User.find({}).remove(function() {
     password: 'admin'
   }, function() {
       console.log('finished populating users');
+    }
+  );
+});
+
+Npc.find({}).remove(function() {
+  Npc.create({
+    name: 'NPC 1',
+    info: 'NPC TEST 1',
+    active: true,
+    imagePath: 'path/to/image'
+  }, {
+    name: 'NPC 2',
+    info: 'NPC TEST 2',
+    active: true,
+    imagePath: 'path/to/image'
+  }, function() {
+      console.log('finished populating npcs');
     }
   );
 });
