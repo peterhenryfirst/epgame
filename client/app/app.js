@@ -6,7 +6,8 @@ angular.module('epgameApp', [
   'ngSanitize',
   'ngRoute',
   'btford.socket-io',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ngMaterial'
 ])
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider

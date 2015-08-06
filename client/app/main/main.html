@@ -40,6 +40,22 @@
 
 
 
+<div flex>
+  <md-grid-list
+        md-cols-sm="1" md-cols-md="2" md-cols-gt-md="3"
+        md-row-height-gt-md="1:1" md-row-height="4:3"
+        md-gutter="8px" md-gutter-gt-sm="20px" >
+    <md-grid-tile ng-repeat="npc in npcs"
+                  ng-class="npc.background" >
+      <img ng-src="{{npc.imagePath}}" alt="{{npc.imagePath}}">
+      <md-grid-tile-footer><h3>{{npc.name}}</h3></md-grid-tile-footer>
+    </md-grid-tile>
+  </md-grid-list>
+</div>
+
+
+
+<!--
 <footer class="footer">
   <div class="container">
       <p>Angular Fullstack v2.1.0 |
@@ -47,3 +63,4 @@
          <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
   </div>
 </footer>
+-->

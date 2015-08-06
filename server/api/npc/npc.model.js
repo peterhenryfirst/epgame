@@ -8,6 +8,7 @@ var NpcSchema = new Schema({
   info: String,
   active: { type: Boolean, default: true },
   imagePath: String,
+  level: Number,
   comments: [{
     userId: { type: Schema.Types.ObjectId, ref: 'UserSchema' },
     text: String,

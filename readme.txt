@@ -43,6 +43,7 @@ You will need to set environment variables for twitter auth:
         rhc set-env TWITTER_ID=id -a epgame
         rhc set-env TWITTER_SECRET=secret -a epgame
 
+#You need to restart application to use that env vars.
 
 Your app should now be live at
         http://epgame-pitworks.rhcloud.com

@@ -1,3 +1,4 @@
+<!--
 <div class="navbar navbar-default navbar-static-top" ng-controller="NavbarCtrl">
   <div class="container">
     <div class="navbar-header">
@@ -27,3 +28,28 @@
     </div>
   </div>
 </div>
+-->
+
+
+
+<div ng-controller="NavbarCtrl">
+  <md-content>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>
+          <span>EPGame</span>
+        </h2>
+        <md-button ng-repeat="item in menu" class="md-raised" ng-class="{'md-primary': isActive(item.link)}" ng-href="{{item.link}}">{{item.title}}</md-button>
+        <span flex></span>
+        <md-button ng-hide="isLoggedIn()" class="md-raised" ng-class="{'md-primary': isActive('/signup')}" ng-href="/signup">Sign up</md-button>
+        <md-button ng-hide="isLoggedIn()" class="md-raised" ng-class="{'md-primary': isActive('/login')}" ng-href="/login">Login</md-button>
+        <h2 ng-show="isLoggedIn()">
+          <span>Hello {{ getCurrentUser().name }}</span>
+        </h2>
+        <md-button ng-show="isLoggedIn()" class="md-raised" ng-class="{'md-primary': isActive('/settings')}" ng-href="/settings"><span class="glyphicon glyphicon-cog"></span></md-button>
+        <md-button ng-show="isLoggedIn()" class="md-raised" ng-class="{'md-primary': isActive('/logout')}" ng-click="logout()">Logout</md-button>
+      </div>
+    </md-toolbar>
+  </md-content>
+</div>
+
